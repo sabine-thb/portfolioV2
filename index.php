@@ -34,7 +34,7 @@
     <header>
         <nav>
             <a href="#whoAmI" class="navItems change">About Me</a>
-            <a href="#mesProjets" class="navItems change2">My projects</a>
+            <a href="#myProjects" class="navItems change2">My projects</a>
             <a href="#contact" class="navItems">Contact</a>
         </nav>
         <div class="img-container">
@@ -68,21 +68,33 @@
         <div></div>
     </section> -->
    
-    <section class="projets">
-    <h2 class="title-section">Let's discover <span class="italic">my projects</span></h2>
-    <h3 class="subtitle">Lorem ipsum dolor</h3>
-        <div class="cardContainer">
+    <section class="projects" id="myProjects">
+        <div class="title-padding">
+            <h2 class="title-section">Let's discover <span class="italic">my projects</span></h2>
+            <h3 class="subtitle">Lorem ipsum dolor</h3>
+        </div>
+    
+        <div class="card-container">
             <?php foreach ($result as $row){?>
-                <a href="projet.php?proj=<?php echo $row["id_proj"]?>" style=" background-color:#<?php echo $row["couleur"]?>"  class=" card card<?php echo $row["id_proj"]?>">
-                    <div class="imgCard"  style="background-image: url('./img/<?php echo $row["id_proj"]?>.jpg');"></div>
+                <a href="projet.php?proj=<?php echo $row["id_proj"]?>"  class=" card card<?php echo $row["id_proj"]?>">
+                    <div class="img-card"  
+                        style="background-image: url('./img/projects/<?php echo $row["id_proj"]?>/cover.jpg');"
+                        data-hover-img='./img/projects/<?php echo $row["id_proj"]?>/hover.jpg'
+                    >
+                    </div>
                     <div class="texte">
-                        <div class="titleCard"> <?php echo $row["titre"]?></div>
-                        <div class="competenceCard"><?php echo $row["competence_principale"]?></div>
+                        <div class="title-card"> <?php echo $row["titre"]?></div>
+                        <div class="competence-card"><?php echo $row["competence_principale"]?></div>
                     </div>
                 </a>
             <?php } ?>
         </div>
     </section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+
     
     <footer></footer>
     

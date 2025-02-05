@@ -134,7 +134,7 @@ section{
     font-family: "Public sans light", "sans-serif";
     font-size: 1rem;
     max-width: 650px;
-    margin:0;
+    margin:20px 0px;
 }
 
 
@@ -142,6 +142,7 @@ section{
     font-family: "Aeonik", "sans-serif";
     font-size: 2.5rem;
     font-weight: 400;
+    line-height: 40px;
     margin:0;
 }
 
@@ -169,6 +170,43 @@ section{
 
 /* projets section */
 
+#myProjects{
+    padding:30px 0px;
+}
+
+
+.title-padding{
+    padding: 30px;
+}
+
+
+.subtitle{
+    font-family: "Galderglynn", "sans-serif";
+    font-size: 1rem;
+    margin-top:20px;
+}
+
+.card-container{
+    display: flex;
+    gap:20px;
+    overflow-x: hidden;
+    padding:50px 0;
+}
+
+.card{
+    width:300px;
+    height:500px;
+    border: 1px solid #CECECE;
+    flex-shrink: 0;
+}
+
+.img-card{
+    width:100%;
+    height: 70%;
+    transition: background-image 0.2s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
 
 @media(min-width:800px){
     .title{
@@ -272,6 +310,10 @@ section{
 
     section{
         padding:70px;
+    }
+
+    .title-padding{
+        padding: 0 70px;
     }
 
 }
