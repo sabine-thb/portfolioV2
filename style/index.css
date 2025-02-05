@@ -198,6 +198,10 @@ section{
     height:500px;
     border: 1px solid #CECECE;
     flex-shrink: 0;
+    text-decoration: none;
+    font-family: "Public sans light", "sans-serif";
+    color: black;
+    font-size: 0.8rem;
 }
 
 .img-card{
@@ -207,6 +211,39 @@ section{
     background-size: cover;
     background-position: center;
 }
+
+.text-card{
+    padding: 15px;
+    display:flex;
+    flex-direction: column;
+    gap:25px;
+    position:relative;
+    text-decoration: none;
+}
+
+.title-card{
+    font-size: 0.9rem;
+    margin-bottom:5px;
+}
+
+
+
+
+.title-card{
+    font-family: "Galderglynn", "sans-serif";
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;   
+}
+
+.number-card{
+    font-family: "Galderglynn", "sans-serif";
+    font-size: 3rem;
+    position:absolute;
+    top:5px;
+    right:8px;
+}
+
 
 @media(min-width:800px){
     .title{

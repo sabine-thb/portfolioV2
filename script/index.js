@@ -61,6 +61,17 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 
+    //add 0 if project's number < 10
+    let projectIdElements = document.querySelectorAll('.number-card');
+
+    projectIdElements.forEach(function(projectIdElement) {
+        let projectId = parseInt(projectIdElement.textContent.trim());
+
+        if (projectId < 10) {
+            projectIdElement.textContent = '0' + projectId;
+        }
+    });
+
 
 
 

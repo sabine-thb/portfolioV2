@@ -82,9 +82,19 @@
                         data-hover-img='./img/projects/<?php echo $row["id_proj"]?>/hover.jpg'
                     >
                     </div>
-                    <div class="texte">
-                        <div class="title-card"> <?php echo $row["titre"]?></div>
-                        <div class="competence-card"><?php echo $row["competence_principale"]?></div>
+                    <div class="text-card">
+                        <div class="text-part1"> 
+                            <div class="title-card"> <?php echo $row["titre"]?></div>
+                            <div class="competence-card"><?php echo $row["competence_principale"]?></div>
+                        </div>
+                        <div class="text-part2"> 
+                            <div class="title-card">Technologies</div>
+                            <div class="technologies-card"><?php echo $row["technologies"]?></div>
+                        </div>
+                        <div class="number-card">
+                            <?php echo $row["id_proj"]?>
+                        </div>
+                        
                     </div>
                 </a>
             <?php } ?>
