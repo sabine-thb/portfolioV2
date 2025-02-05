@@ -1,0 +1,344 @@
+*,*::after, *::before {
+    box-sizing: border-box;
+}
+
+*{
+    cursor:none;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin:0;
+}
+
+
+/* header */
+
+header{
+height:100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.img-container{
+    height:fit-content;
+    position: relative;
+}
+
+.header-img{
+    width:20rem;
+    height:20rem;
+    background-image: url("../img/sabine.jpg");
+    background-size: cover;
+}
+
+/* nav */
+
+nav{
+    display: flex;
+    font-family: "Galderglynn", "sans-serif";
+    flex-direction: column;
+    justify-content:flex-end;
+    position: absolute;
+    top:0;
+    right:0;
+    padding:30px;
+    gap:15px;
+}
+
+nav a{
+    text-decoration: none;
+    color:black;
+    text-align: right;
+    font-size: 0.7rem;
+}
+
+.title{
+    font-family: "Ivy", "sans-serif";
+    font-weight: 300;
+    font-size: 5rem;
+    text-transform: uppercase;
+    margin:0;
+    position: absolute;
+}
+
+
+
+.firstName{
+    top:-70px;
+    left:-15px;
+}
+
+.lastName{
+    bottom:-70px; 
+    right:-10px; 
+    display: flex;
+}
+
+.last-letter{
+    position: relative;
+}
+
+.flower1{
+    position: absolute;
+    bottom:-50px;
+    left:0px;
+    width: 40px;
+    z-index: 10;
+    height: auto;
+    z-index:10;
+    transform: rotate(25deg);
+    animation: rotation 10s linear infinite;
+}
+
+.flower2{
+    position: absolute;
+    top:-80px;
+    right:0;
+    width: 50px;
+    z-index: 10;
+    height: auto;
+    z-index:10;
+    transform: rotate(140deg);
+    animation: rotation 10s linear infinite;
+    
+}
+
+.flower3{
+    position: absolute;
+    bottom:-83px;
+    left:-7px;
+    width: 80px;
+    z-index: 10;
+    height: auto;
+    z-index:10;
+    transform: rotate(-25deg);
+    animation: rotation 10s linear infinite;
+}
+
+
+/* who i am section */
+
+section{
+    padding:30px;
+}
+
+.content{
+    font-family: "Public sans light", "sans-serif";
+    font-size: 1rem;
+    max-width: 650px;
+    margin:0;
+}
+
+
+.title-section{
+    font-family: "Aeonik", "sans-serif";
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin:0;
+}
+
+.italic{
+    font-family: "Ogg", "sans-serif";   
+}
+
+.CV{
+    display: flex;
+    gap: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 0.7rem;
+    border-radius: 50px;
+    padding: 10px 40px;
+    border: 1px solid black;
+    width: fit-content;
+    font-family: "Public sans light", "sans-serif";
+    margin-top:40px;
+}
+
+.CV p{
+    margin: 0;
+}
+
+/* projets section */
+
+
+@media(min-width:800px){
+    .title{
+        font-size: 10rem;
+    }
+
+    .firstName{
+        top:-140px;
+        left:-65px;
+    }
+    
+    .lastName{
+        bottom:-140px; 
+        right:-130px; 
+        display: flex;
+    }
+
+    .header-img{
+        height: 50vh;
+        width: 52.5vw;
+        max-width: 600px;
+        background-position: left;
+    }
+
+    .flower1{
+        top:80px;
+        left:70px;
+        width: 150px;
+    }
+    
+    .flower2{
+        top:-80px;
+        right:-50px;
+        width: 50px;
+    }
+    
+    .flower3{
+        bottom:-83px;
+        left:-100px;
+        width: 80px;
+    }
+
+
+    .title-section{
+        font-size: 3.5rem;
+    }
+
+    section{
+        padding:50px;
+    }
+}
+
+
+
+@media(min-width:1150px){
+
+     .title{
+        font-size: 15rem;
+    } 
+
+    .firstName{
+        top: -210px;
+        left: -230px;
+    }
+    
+    .lastName{
+        bottom: -200px;
+        right: -320px;
+    }
+
+    .header-img{
+        height: 70vh;
+    }
+
+    .flower1{
+        top:-29px;
+        left:34px;
+        width: 200px;
+    }
+    
+    .flower2{
+        top:300px;
+        right:-130px;
+        width: 70px;
+    }
+    
+    .flower3{
+        bottom:40px;
+        left:-140px;
+        width: 80px;
+    }
+
+    .title-section{
+        font-size: 4rem;
+    }
+
+    .content{
+        font-size: 1.1rem;
+        max-width: 750px;
+    }
+
+    section{
+        padding:70px;
+    }
+
+}
+
+
+
+
+
+
+
+/* animations flowers css */
+
+@keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* custom-cursor  */
+body #magicMouseCursor {
+    border: 1px solid rgb(0, 0, 0) !important;
+    mix-blend-mode: hard-light;
+  }
+  
+body #magicPointer {
+    background: rgb(0, 0, 0) !important;
+    mix-blend-mode: hard-light;
+    position: relative;
+    z-index:3000000000;
+}
+

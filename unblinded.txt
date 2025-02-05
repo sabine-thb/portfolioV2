@@ -1,0 +1,4 @@
+Unblinded, c'est le nom d'une association luttant contre l'invisibilté des femmes dans le domaine scientifique. <br>
+Cette association, nous l'avons créée en groupe de travail. <br>
+Nous devions imaginer un concept d'association et réaliser toute sa communication, que ce soit la réalisation de site web, d'affiches, de cartes de visite, etc.<br> Dans le groupe je me suis chargée de réaliser le site avec wordpress et élémentor. <br>
+J'ai également appris à ajouter des fonctionnalités javascript dans wordpress comme vous pourrez le voir avec la fontionnalité de tri de la page "archives".

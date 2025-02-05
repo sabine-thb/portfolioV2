@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Aeonik";
+    src: url(../fonts/AeonikTRIAL-Regular.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: "GalderGlynn";
+    src: url(../fonts/Galderglynn\ Titling\ Rg.woff2) format("woff2")
+}
+
+
+@font-face {
+    font-family: "Ivy";
+    src: url(../fonts/ivy-mode-thin.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: "Ogg";
+    src: url(../fonts/Ogg-BoldItalic.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: "Public sans bold";
+    src: url(../fonts/PublicSans-Bold.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: "Public sans light";
+    src: url(../fonts/PublicSans-Light.woff2) format("woff2")
+}
