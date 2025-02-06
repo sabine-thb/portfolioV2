@@ -194,12 +194,12 @@ section{
 /* projets section */
 
 #myProjects{
-    padding:30px 0px;
+    padding: 0px 0px 30px 0px;
 }
 
 
 .title-padding{
-    padding: 30px;
+    padding: 0px 30px 30px 30px;
 }
 
 

@@ -33,8 +33,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerImg = document.querySelector(".header-img");
 
     window.addEventListener("scroll", () => {
-        headerImg.style.bottom = window.scrollY * - 0.1 + "px";
+        
+
+        const screenWidth = window.innerWidth; 
+    
+        if (screenWidth < 700) {
+            headerImg.style.bottom = window.scrollY * - 0.02 + "px";
+        } else {
+            headerImg.style.bottom = window.scrollY * - 0.1 + "px";
+        }
     });
+
+    
 
        
 
