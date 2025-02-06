@@ -37,6 +37,7 @@ align-items: center;
     height:20rem;
     background-image: url("../img/sabine.jpg");
     background-size: cover;
+    position:relative;
 }
 
 /* nav */
@@ -168,6 +169,28 @@ section{
     margin: 0;
 }
 
+/* video section */
+
+
+.video{
+    width:100%;
+    height:auto;
+    position: relative;
+}
+
+.video-text{
+    font-family: "Galderglynn", "sans-serif";
+    font-size: 1rem;
+    margin-top:20px;
+    position: relative;
+    bottom:10px;
+    max-width: 90%;
+    margin-left: auto;
+    background-color: #ffffff;
+    padding:5px;
+    letter-spacing: 2px;
+}
+
 /* projets section */
 
 #myProjects{
@@ -244,6 +267,43 @@ section{
     right:8px;
 }
 
+@media(min-width:500px){
+
+.video-text{
+    max-width: 65%;
+}
+
+
+
+}
+
+
+@media(min-width:600px){
+
+    .video-text{
+        max-width: 65%;
+        font-size: 1.2rem;
+    }
+    
+    
+    
+}
+
+@media(min-width:700px){
+
+    .video{
+        width:85%;
+    }
+
+    .video-text{
+        max-width: 65%;
+        font-size: 1.2rem;
+    }
+    
+    
+    
+}
+
 
 @media(min-width:800px){
     .title{
@@ -294,6 +354,20 @@ section{
     section{
         padding:50px;
     }
+}
+
+@media(min-width:1000px){
+
+.video{
+    width:65%;
+}
+
+.video-text{
+    max-width: 55%;
+    font-size: 1.8rem;
+    bottom:100px;
+}
+
 }
 
 

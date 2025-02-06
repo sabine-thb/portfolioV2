@@ -1,6 +1,6 @@
 <?php
     include("connexion.php");
-    $requete="SELECT * FROM projets";
+    $requete="SELECT * FROM projets ORDER BY id_proj";
     $stmt = $db->query($requete);
     $result = $stmt->fetchall(PDO::FETCH_ASSOC);
 
@@ -64,9 +64,17 @@
             <img src="./img/arrow.svg" alt="">
         </a>
     </section>
-    <!-- <section>
-        <div></div>
-    </section> -->
+    <section>
+        <div class="video-container">
+            <video class="video" src="./video/video.mp4" autoplay muted loop> </video>
+            <div class="video-text">
+                créative dès mon plus jeune age, le dessin et la peinture sont ma passion.
+                j’aime quand les idées prennent forme puis prennent vie. Curieuse, toujours prête à explorer, à apprendre. Dynamique, parce que l’action et l’évolution sont essentielles. 
+                audacieuse, avec cette envie constante de donner du caractère aux projets. Passionnée par la recherche de l’originalité.
+                Pas juste faire. Faire bien. Faire différent. 
+            </div>
+            </div>
+    </section>
    
     <section class="projects" id="myProjects">
         <div class="title-padding">
@@ -100,7 +108,9 @@
             <?php } ?>
         </div>
     </section>
-    <section></section>
+    <section id="contact">
+        
+    </section>
     <section></section>
     <section></section>
     <section></section>
