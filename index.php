@@ -8,7 +8,6 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,6 @@
         content="Sabine Thibout, France, front-end développeuse, back-end développeuse, full-stack développeuse, graphic designer, ui designer, portfolio, designer française, développeuse française,sabine thibout, sabinethibout, portfolio sabine thibout">
 
     <title>Sabine Thibout | Portfolio</title>
-    <link rel="stylesheet" href="style/home.css">
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/fonts.css">
     <link rel="shortcut icon" type="image/png" href="./img/logo.png" /> 
@@ -26,6 +24,7 @@
     <script defer type="text/javascript"
     src="https://res.cloudinary.com/veseylab/raw/upload/v1636192990/magicmouse/magic_mouse-1.2.1.cdn.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script type="module" src="./js/script.js" defer></script>
 </head>
 
 <body>
@@ -33,9 +32,9 @@
     <div class="cursor2"></div>
     <header>
         <nav>
-            <a href="#whoAmI" class="navItems change">About Me</a>
-            <a href="#myProjects" class="navItems change2">My projects</a>
-            <a href="#contact" class="navItems">Contact</a>
+            <a href="#whoAmI" class="nav-item change">About Me</a>
+            <a href="#myProjects" class="nav-item change2">My projects</a>
+            <a href="#contact" class="nav-item">Contact</a>
         </nav>
         <div class="img-container">
             <div class="header-img"></div>
@@ -84,10 +83,10 @@
     
         <div class="card-container">
             <?php foreach ($result as $row){?>
-                <a href="projet.php?proj=<?php echo $row["id_proj"]?>"  class=" card card<?php echo $row["id_proj"]?>">
+                <a href="project.php?proj=<?php echo $row["id_proj"]?>"  class=" card card<?php echo $row["id_proj"]?>">
                     <div class="img-card"  
                         style="background-image: url('./img/projects/<?php echo $row["id_proj"]?>/cover.jpg');"
-                        data-hover-img='./img/projects/<?php echo $row["id_proj"]?>/hover.jpg'
+                        data-hover-img='./img/projects/<?php echo $row["id_proj"]?>/cover2.jpg'
                     >
                     </div>
                     <div class="text-card">
@@ -109,20 +108,45 @@
         </div>
     </section>
     <section id="contact">
-        
-    </section>
-    <section></section>
-    <section></section>
-    <section></section>
+        <h2 class="title-section">Contact</h2>
+        <p class="content">
+        Si tu es intéressé par mes compétences et mon profil, alors n’hésites pas à me contacter ! Je serais ravie de pouvoir échanger avec toi sur mes compétences professionnelles, et de collaborer sur un éventuel projet.
+        </p>
+        <div class="links">
+            <a href="" class="contact-link">
+                <p class="text-link">LinkedIn</p>
+                <img src="./img/link.svg" class="text-link" alt="Lien vers mon LinkedIn">
+            </a>
+            <a href="mailto:sabine@thibout.fr" class="contact-link">
+                <p class="text-link">Mail</p>
+                <img src="./img/link.svg" class="text-link" alt="M'envoyer un mail">
+            </a>
+            <a href="tel:+651827205" class="contact-link">
+                <p class="text-link">Téléphone</p>
+                <img src="./img/link.svg" class="text-link" alt="Téléphonez-moi !">
+            </a>
+            <a href="" class="contact-link">
+                <p class="text-link">Github</p>
+                <img src="./img/link.svg" class="text-link" alt="Lien vers mon GitHub">
+            </a>
 
-    
-    <footer></footer>
+        </div>
+    </section>
+    <footer>
+        <a href="#whoAmI" class="navItems change">About Me</a>
+        <a href="#myProjects" class="navItems change2">My projects</a>
+        <a href="#contact" class="navItems">Contact</a>
+    </footer>
     
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
      <script src="./script/animations.js"></script>
      <script src="./script/index.js"></script>
+
+
+
+
 </body>
 
 </html>

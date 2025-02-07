@@ -15,6 +15,11 @@
 }
 
 @font-face {
+    font-family: "Ivy bold";
+    src: url(../fonts/IvyMode-SemiBold.woff2) format("woff2")
+}
+
+@font-face {
     font-family: "Ogg";
     src: url(../fonts/Ogg-BoldItalic.woff2) format("woff2")
 }

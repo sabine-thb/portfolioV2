@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (screenWidth < 700) {
             videoText.style.bottom = window.scrollY * 0.06 + "px"; 
         } else {
-            videoText.style.bottom = window.scrollY * 0.12 + "px"; 
+            headerImg.style.bottom = window.scrollY * 0.12 + "px"; 
         }
     
     });

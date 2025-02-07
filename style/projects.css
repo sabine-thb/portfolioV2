@@ -1,0 +1,212 @@
+*,*::after, *::before {
+    box-sizing: border-box;
+}
+
+/* html {
+    scroll-behavior: smooth;
+} */
+
+
+body{
+    margin:0;
+    position: relative;
+}
+
+/* header */
+
+.header-text{
+    padding:30px;
+    position: relative;
+    font-size:2.5rem;
+}
+
+/* nav */
+
+nav{
+    display: flex;
+    font-family: "Galderglynn", "sans-serif";
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top:0;
+    right:0;
+    padding:30px;
+    gap:15px;
+    z-index: 10;
+}
+
+.nav-item{
+    text-decoration: none;
+    color:black;
+    text-align: right;
+    font-size: 0.7rem;
+    display: inline-block;
+    position: relative;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+    width:fit-content;
+    text-align: right;
+}
+
+.nav-item:before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -1px;
+    left: 50%;
+    background-color: rgb(0, 0, 0);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-item:hover:before{
+    width: 100%;
+    left: 0;
+}
+
+.back{
+    transform: rotate(180deg);
+    width:50px;
+    height:auto;
+    margin-bottom:60px;
+    margin-top:50px;
+}
+
+
+.title-container{
+    display: flex;
+    flex-direction: column;
+    width:fit-content;
+}
+
+.title{
+    margin:0;
+}
+
+.first-part, .title{
+    font-family: "Aeonik", "sans-serif";
+    font-size:2.5rem;
+}
+
+.second-part{
+    font-family: "Ogg", "sans-serif";
+    text-transform: lowercase;
+    
+}
+
+/* .img-cover-container{
+    position: relative;
+    height: 100vh; 
+    overflow: hidden;
+} */
+
+.img-cover{
+    width:100%;
+    height:70vh;
+    object-fit: cover;
+    will-change: transform;
+    position: sticky;
+    top:0;
+}
+
+
+/* section explications */
+
+section{
+    padding:30px;
+}
+
+.informations-container{
+    display: flex;
+    flex-direction: column;
+    gap:60px;
+    font-family: "Public sans light", "sans-serif";
+    font-size: 0.8rem;
+}
+
+p{
+    margin:0;
+}
+
+.informations-data{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+.date-title, .technologies-title{
+    font-family: "Galderglynn", "sans-serif";
+    font-size:0.8rem;
+}
+
+.text-title{
+    font-family: "Ivy bold", "sans-serif";
+    font-weight: 300;
+    font-size:1.5rem;
+    margin-bottom:20px;
+}
+
+.link-project{
+    display: flex;
+    gap: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 0.7rem;
+    border-radius: 50px;
+    padding: 10px 40px;
+    border: 1px solid black;
+    width: fit-content;
+    font-family: "Public sans light", "sans-serif";
+    margin-top:80px;
+}
+
+.img-project-container{
+    width:100%;
+}
+
+
+.img-project{
+    display: block;
+    width: 100%;
+    height: auto; 
+    object-fit: contain;
+    margin-bottom:25px;
+}
+
+
+
+
+
+/* webgl */
+
+
+[data-webgl-media] {
+    opacity: 0;
+  }
+  
+canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  /* scroll */
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+
+
+
