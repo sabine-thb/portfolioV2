@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Parrallax effect
-    // const headerImg = document.querySelector(".header-text");
 
-
-    // window.addEventListener("scroll", () => {
-    //     const screenWidth = window.innerWidth; 
-
-    //     if (screenWidth < 700) {
-    //         // headerImg.style.transform = `translateY(${window.scrollY * -1.2}px)`;  
-    //     } else {
-    //         // headerImg.style.transform = `translateY(${window.scrollY * 1.2}px)`; 
-
-    //         headerImg.style.top = window.scrollY * -0.7 + "px"; 
-    //     }
-
-
-    // });
+    //change arrow color btn on hover
+    document.querySelectorAll('.button').forEach(button => {
+        const img = button.querySelector(':scope > img'); 
+        if (!img) return;
+    
+        button.addEventListener('mouseenter', () => {
+            img.dataset.originalSrc = img.src;
+            img.src = './img/arrow-white.svg'; 
+        });
+    
+        button.addEventListener('mouseleave', () => {
+            if (img.dataset.originalSrc) {
+                img.src = img.dataset.originalSrc; 
+            }
+        });
+    });
 
 
 });

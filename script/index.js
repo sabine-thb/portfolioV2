@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (screenWidth < 700) {
             videoText.style.bottom = window.scrollY * 0.06 + "px"; 
         } else {
-            headerImg.style.bottom = window.scrollY * 0.12 + "px"; 
+            videoText.style.bottom = window.scrollY * 0.12 + "px"; 
         }
     
     });
@@ -43,9 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
             headerImg.style.bottom = window.scrollY * - 0.1 + "px";
         }
     });
-
-    
-
        
 
     // Change image hover effect
@@ -61,6 +58,25 @@ document.addEventListener("DOMContentLoaded", function () {
             card.style.backgroundImage = originalImage; 
         });
     });
+
+
+    //change arrow color btn on hover
+    document.querySelectorAll('.button').forEach(button => {
+        const img = button.querySelector(':scope > img'); 
+        if (!img) return;
+    
+        button.addEventListener('mouseenter', () => {
+            img.dataset.originalSrc = img.src;
+            img.src = './img/arrow-white.svg'; 
+        });
+    
+        button.addEventListener('mouseleave', () => {
+            if (img.dataset.originalSrc) {
+                img.src = img.dataset.originalSrc; 
+            }
+        });
+    });
+    
     
 
 

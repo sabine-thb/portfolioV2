@@ -24,7 +24,6 @@
     <script defer type="text/javascript"
     src="https://res.cloudinary.com/veseylab/raw/upload/v1636192990/magicmouse/magic_mouse-1.2.1.cdn.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
-    <script type="module" src="./js/script.js" defer></script>
 </head>
 
 <body>
@@ -58,7 +57,7 @@
         Que ce soit la réalisation de wireframes ou le développement web, tout m’intéresse ! 
         Curieuse et motivée, j’apprends en continu pour proposer des solutions à la fois esthétiques et performantes. <br>
         Ayant acquis une solide expérience en webdesign et développement à travers mes projets universitaires, j’ai affiné ma créativité pour concevoir des interfaces esthétiques et intuitives. En parallèle, mon année d’apprentissage en tant que développeuse front-end m’a permis de renforcer mes compétences techniques pour donner vie à ces créations avec efficacité.</p>
-        <a href="./doc/CV-SabineThibout.pdf" target="_blank" class="CV">
+        <a href="./doc/CV-SabineThibout.pdf" target="_blank" class=" button CV">
             <p>Download my CV</p>
             <img src="./img/arrow.svg" alt="">
         </a>

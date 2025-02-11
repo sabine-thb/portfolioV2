@@ -5,8 +5,16 @@ $requete="SELECT * FROM projets WHERE id_proj=1";
 $stmt=$db->query($requete);
 $result=$stmt -> fetchall(PDO::FETCH_ASSOC);
 
+$totalProjectsQuery = "SELECT COUNT(*) as total FROM projets";
+$totalProjectsStmt = $db->query($totalProjectsQuery);
+$totalProjects = $totalProjectsStmt->fetch(PDO::FETCH_ASSOC)['total'];
+
+
 if(isset($_GET["proj"])){
     $proj = $_GET["proj"];
+
+    $prevProj = ($proj > 1) ? $proj - 1 : $totalProjects;
+    $nextProj = ($proj < $totalProjects) ? $proj + 1 : 1;
 }
 else{
     $proj = "1";
@@ -16,7 +24,7 @@ $requete="SELECT * FROM projets WHERE id_proj=$proj";
 $stmt=$db->query($requete);
 $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
 
-$previousPage = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php'; 
+// $previousPage = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php'; 
 
 
 ?>
@@ -45,16 +53,19 @@ $previousPage = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'in
     <div class="cursor"></div>
     <div class="cursor2"></div>
     <header>
-        <nav>
-            <a href="#whoAmI" class="nav-item change">About Me</a>
-            <a href="#myProjects" class="nav-item change2">My projects</a>
-            <a href="#contact" class="nav-item">Contact</a>
-        </nav>
-        <div class="header-text">
-        <a href="<?php echo $previousPage ?>">
-             <img src="./img/arrow.svg" alt="Retour en arrière" class="back">
+      <div class="nav-container">
+        <a href="index.php">
+            <img src="./img/arrow.svg" alt="Retour en arrière" class="back">
         </a>
+        <nav>
+              <a href="#whoAmI" class="nav-item change">About Me</a>
+              <a href="#myProjects" class="nav-item change2">My projects</a>
+              <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+
+      </div>
         
+        <div class="header-text">   
             <div class="title-container">
                 <?php
                 foreach ($result as $row) {
@@ -71,8 +82,8 @@ $previousPage = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'in
         </div>
         
         <img src="./img/projects/<?php echo $row['id_proj']; ?>/cover2.jpg" alt="Project cover" class="img-cover">
-
     </header>
+    <section class="scroll">
     <section>
         <div class="informations-container">
            <div class="informations-data">
@@ -88,7 +99,7 @@ $previousPage = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'in
            <div class="informations-text">
                 <p class="text-title">A few images to illustrate the project..</p>
                 <p class="text-description"><?php foreach ($result as $row) echo $row["description"]?></p>
-                <a href="<?php foreach ($result as $row) echo $row["lien"]?>" class="link-project">
+                <a href="<?php foreach ($result as $row) echo $row["lien"]?>" class="button link-project">
                     <p>Visit project</p>
                     <img src="./img/arrow.svg" alt="Visit the project">
                 </a>
@@ -110,11 +121,24 @@ $previousPage = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'in
             }
             ?>
         </div>
+        <div class="project-navigation">
+        <a href="project.php?proj=<?php echo $prevProj; ?>" class="button btn-nav prev-project">
+          <img src="./img/arrow.svg" alt="">
+          <p>Prev project</p>
+        </a>
+        <a href="project.php?proj=<?php echo $nextProj; ?>" class="button btn-nav next-project">
+          <p>Next project</p>
+          <img src="./img/arrow.svg" alt="">
+        </a>
+     </div>
+    </section>
     </section>
 
 
-    <footer>
-        
+     <footer>
+        <a href="#whoAmI" class="navItems change">About Me</a>
+        <a href="#myProjects" class="navItems change2">My projects</a>
+        <a href="#contact" class="navItems">Contact</a>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
