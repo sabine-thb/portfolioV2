@@ -83,7 +83,7 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
         
         <img src="./img/projects/<?php echo $row['id_proj']; ?>/cover2.jpg" alt="Project cover" class="img-cover">
     </header>
-    <section class="scroll">
+    
     <section>
         <div class="informations-container">
            <div class="informations-data">
@@ -97,7 +97,7 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
                 </div>
            </div>
            <div class="informations-text">
-                <p class="text-title">A few images to illustrate the project..</p>
+                <p class="text-title"> <?php foreach ($result as $row) echo $row["accroche"]?></p>
                 <p class="text-description"><?php foreach ($result as $row) echo $row["description"]?></p>
                 <a href="<?php foreach ($result as $row) echo $row["lien"]?>" class="button link-project">
                     <p>Visit project</p>
