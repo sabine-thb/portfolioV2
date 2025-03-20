@@ -81,7 +81,8 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
 
         </div>
         
-        <img src="./img/projects/<?php echo $row['id_proj']; ?>/cover2.jpg" alt="Project cover" class="img-cover">
+        <div class="img-cover img-cover<?php echo $row['id_proj']; ?>" style="background-image: url('./img/projects/<?php echo $row['id_proj']; ?>/header.jpg'); ">
+        </div>
     </header>
     
     <section>
@@ -99,10 +100,12 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
            <div class="informations-text">
                 <p class="text-title"> <?php foreach ($result as $row) echo $row["accroche"]?></p>
                 <p class="text-description"><?php foreach ($result as $row) echo $row["description"]?></p>
-                <a href="<?php foreach ($result as $row) echo $row["lien"]?>" class="button link-project">
-                    <p>Visit project</p>
-                    <img src="./img/arrow.svg" alt="Visit the project">
-                </a>
+                <?php if (!empty($row["lien"])): ?>
+                    <a href="<?php echo $row["lien"]; ?>" class="button link-project">
+                        <p>Visit project</p>
+                        <img src="./img/arrow.svg" alt="Visit the project">
+                    </a>
+                <?php endif; ?>
            </div>     
         </div>
     </section>

@@ -110,10 +110,16 @@ nav {
 
 .img-cover {
     width: 100%;
-    height: 70vh;
-    object-fit: cover;
-    will-change: transform;
-    position: relative;
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+    /* object-fit: cover; */
+    /* will-change: transform;
+    position: relative; */
+}
+
+.img-cover.img-cover3{
+    background-position: right ;
 }
 
 
@@ -312,6 +318,8 @@ footer a:hover:before {
     .informations-text{
         margin-top:100px;
     }
+
+    
 }
 
 
@@ -331,6 +339,10 @@ footer a:hover:before {
 
     .first-part, .second-part {
         font-size: 3.5rem;
+    }
+
+    .img-cover{
+        height:800px;
     }
 
 
