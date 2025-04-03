@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+*{
+    cursor:none;
+}
+
 /* html {
     scroll-behavior: smooth;
 } */
@@ -390,4 +394,20 @@ footer a:hover:before {
         padding: 20px 70px;
     }
 
+}
+
+
+
+
+/* custom-cursor  */
+body #magicMouseCursor {
+    border: 1px solid rgb(0, 0, 0) !important;
+    mix-blend-mode: hard-light;
+  }
+  
+body #magicPointer {
+    background: rgb(0, 0, 0) !important;
+    mix-blend-mode: hard-light;
+    position: relative;
+    z-index:3000000000;
 }

@@ -24,8 +24,6 @@ $requete="SELECT * FROM projets WHERE id_proj=$proj";
 $stmt=$db->query($requete);
 $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
 
-// $previousPage = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php'; 
-
 
 ?>
 
@@ -42,7 +40,6 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
     <title>Sabine Thibout | portfolio</title>
     <link rel="stylesheet" href="style/fonts.css">
     <link rel="stylesheet" href="style/projects.css">
-    <link rel="shortcut icon" type="image/png" href="./img/logo.png" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script defer type="text/javascript"
     src="https://res.cloudinary.com/veseylab/raw/upload/v1636192990/magicmouse/magic_mouse-1.2.1.cdn.min.js"></script>
@@ -139,9 +136,9 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
 
 
      <footer>
-        <a href="#whoAmI" class="navItems change">About Me</a>
-        <a href="#myProjects" class="navItems change2">My projects</a>
-        <a href="#contact" class="navItems">Contact</a>
+        <a href="index.php#whoAmI" class="navItems change">About Me</a>
+        <a href="index.php#myProjects" class="navItems change2">My projects</a>
+        <a href="index.php#contact" class="navItems">Contact</a>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -174,29 +171,7 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
     <script id="effectVertex" type="shader/vertex">
@@ -214,65 +189,65 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
         uniform vec2 uMouseOverPos; // 0 (left) 0 (top) / 1 (right) 1 (bottom)
 
         // random
-float random(vec2 st) {
-  return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
-}
+        float random(vec2 st) {
+          return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+        }
 
-// contain
-vec2 getContainUvFrag(vec2 uv, vec2 textureSize, vec2 quadSize) {
-  vec2 tempUv = uv - vec2(0.5);
+        // contain
+        vec2 getContainUvFrag(vec2 uv, vec2 textureSize, vec2 quadSize) {
+          vec2 tempUv = uv - vec2(0.5);
 
-  float quadAspect = quadSize.x / quadSize.y;
-  float textureAspect = textureSize.x / textureSize.y;
+          float quadAspect = quadSize.x / quadSize.y;
+          float textureAspect = textureSize.x / textureSize.y;
 
-  if (quadAspect > textureAspect) {
-    tempUv *= vec2(quadAspect / textureAspect, 1.0);
-  } else {
-    tempUv *= vec2(1.0, textureAspect / quadAspect);
-  }
+          if (quadAspect > textureAspect) {
+            tempUv *= vec2(quadAspect / textureAspect, 1.0);
+          } else {
+            tempUv *= vec2(1.0, textureAspect / quadAspect);
+          }
 
-  tempUv += vec2(0.5);
+          tempUv += vec2(0.5);
 
-  return tempUv;
-}
+          return tempUv;
+        }
 
-// cover
-vec2 getCoverUvVert(vec2 uv, vec2 textureSize, vec2 quadSize) {
-  vec2 ratio = vec2(
-    min((quadSize.x / quadSize.y) / (textureSize.x / textureSize.y), 1.0),
-    min((quadSize.y / quadSize.x) / (textureSize.y / textureSize.x), 1.0)
-  );
+        // cover
+        vec2 getCoverUvVert(vec2 uv, vec2 textureSize, vec2 quadSize) {
+          vec2 ratio = vec2(
+            min((quadSize.x / quadSize.y) / (textureSize.x / textureSize.y), 1.0),
+            min((quadSize.y / quadSize.x) / (textureSize.y / textureSize.x), 1.0)
+          );
 
-  return vec2(
-    uv.x * ratio.x + (1.0 - ratio.x) * 0.5,
-    uv.y * ratio.y + (1.0 - ratio.y) * 0.5
-  );
-}
+          return vec2(
+            uv.x * ratio.x + (1.0 - ratio.x) * 0.5,
+            uv.y * ratio.y + (1.0 - ratio.y) * 0.5
+          );
+        }
 
-vec2 getCoverUvFrag(vec2 uv, vec2 textureSize, vec2 quadSize) {
-  vec2 tempUv = uv - vec2(0.5);
+        vec2 getCoverUvFrag(vec2 uv, vec2 textureSize, vec2 quadSize) {
+          vec2 tempUv = uv - vec2(0.5);
 
-  float quadAspect = quadSize.x / quadSize.y;
-  float textureAspect = textureSize.x / textureSize.y;
+          float quadAspect = quadSize.x / quadSize.y;
+          float textureAspect = textureSize.x / textureSize.y;
 
-  if (quadAspect < textureAspect) {
-    tempUv *= vec2(quadAspect / textureAspect, 1.0);
-  } else {
-    tempUv *= vec2(1.0, textureAspect / quadAspect);
-  }
+          if (quadAspect < textureAspect) {
+            tempUv *= vec2(quadAspect / textureAspect, 1.0);
+          } else {
+            tempUv *= vec2(1.0, textureAspect / quadAspect);
+          }
 
-  tempUv += vec2(0.5);
+          tempUv += vec2(0.5);
 
-  return tempUv;
-}
+          return tempUv;
+        }
 
-// uv, rotation (in radians), mid (point to rotate around)
-vec2 rotate(vec2 uv, float rotation, vec2 mid) {
-  return vec2(
-    cos(rotation) * (uv.x - mid.x) + sin(rotation) * (uv.y - mid.y) + mid.x,
-    cos(rotation) * (uv.y - mid.y) - sin(rotation) * (uv.x - mid.x) + mid.y
-  );
-}
+        // uv, rotation (in radians), mid (point to rotate around)
+        vec2 rotate(vec2 uv, float rotation, vec2 mid) {
+          return vec2(
+            cos(rotation) * (uv.x - mid.x) + sin(rotation) * (uv.y - mid.y) + mid.x,
+            cos(rotation) * (uv.y - mid.y) - sin(rotation) * (uv.x - mid.x) + mid.y
+          );
+        }
 
 
         out vec2 vUv;  // 0 (left) 0 (bottom) - 1 (top) 1 (right)
@@ -296,35 +271,35 @@ vec2 rotate(vec2 uv, float rotation, vec2 mid) {
     </script>
 
     <script id="effectFragment" type="shader/fragment">
-    precision highp float;
+      precision highp float;
 
-uniform vec2 uResolution; // in pixel
-uniform float uTime; // in s
-uniform vec2 uCursor; // 0 (left) 0 (top) / 1 (right) 1 (bottom)
-uniform float uScrollVelocity; // - (scroll up) / + (scroll down)
-uniform sampler2D uTexture; // texture
-uniform vec2 uTextureSize; // size of texture
-uniform vec2 uQuadSize; // size of texture element
-uniform float uBorderRadius; // pixel value
-uniform float uMouseEnter; // 0 - 1 (enter) / 1 - 0 (leave)
-uniform vec2 uMouseOverPos; // 0 (left) 0 (top) / 1 (right) 1 (bottom)
+      uniform vec2 uResolution; // in pixel
+      uniform float uTime; // in s
+      uniform vec2 uCursor; // 0 (left) 0 (top) / 1 (right) 1 (bottom)
+      uniform float uScrollVelocity; // - (scroll up) / + (scroll down)
+      uniform sampler2D uTexture; // texture
+      uniform vec2 uTextureSize; // size of texture
+      uniform vec2 uQuadSize; // size of texture element
+      uniform float uBorderRadius; // pixel value
+      uniform float uMouseEnter; // 0 - 1 (enter) / 1 - 0 (leave)
+      uniform vec2 uMouseOverPos; // 0 (left) 0 (top) / 1 (right) 1 (bottom)
 
-in vec2 vUv; // 0 (left) 0 (bottom) - 1 (right) 1 (top)
-in vec2 vUvCover;
+      in vec2 vUv; // 0 (left) 0 (bottom) - 1 (right) 1 (top)
+      in vec2 vUvCover;
 
-out vec4 outColor;
+      out vec4 outColor;
 
 
-void main() {
-  // texture
-  vec3 texture = vec3(texture(uTexture, vUvCover));
+      void main() {
+        // texture
+        vec3 texture = vec3(texture(uTexture, vUvCover));
 
-  // output
-  outColor = vec4(texture, 1.0);
-}
+        // output
+        outColor = vec4(texture, 1.0);
+      }
     </script>
 
-    <script src="./script/3D.js"></script>
+<script src="./script/3D.js"></script>
 
     
 </body>

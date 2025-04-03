@@ -1,9 +1,10 @@
 <?php
     include("connexion.php");
-    $requete="SELECT * FROM projets ORDER BY id_proj";
-    $stmt = $db->query($requete);
-    $result = $stmt->fetchall(PDO::FETCH_ASSOC);
 
+    $requete = "SELECT * FROM projets ORDER BY id_proj";
+    $stmt = $db->prepare($requete);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
     <meta name="description"
         content="Présentation de mes projets personnels et professionnels dans le domaine du numérique.">
     <meta name="keywords"
-        content="Sabine Thibout, France, front-end développeuse, back-end développeuse, full-stack développeuse, graphic designer, ui designer, portfolio, designer française, développeuse française,sabine thibout, sabinethibout, portfolio sabine thibout">
+        content="Sabine Thibout, France, front-end développeuse, back-end développeuse, full-stack développeuse, graphic designer, ui designer, portfolio, designer française, développeuse française, sabine thibout, sabinethibout, portfolio sabine thibout">
 
     <title>Sabine Thibout | Portfolio</title>
     <link rel="stylesheet" href="style/index.css">

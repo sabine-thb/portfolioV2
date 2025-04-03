@@ -46,18 +46,31 @@ document.addEventListener("DOMContentLoaded", function () {
        
 
     // Change image hover effect
-    document.querySelectorAll('.img-card').forEach(function(card) {
-        const originalImage = card.style.backgroundImage;
-    
-        card.addEventListener('mouseover', function() {
-            let hoverImage = card.getAttribute('data-hover-img');
-            card.style.backgroundImage = `url(${hoverImage})`; 
+    function updateHoverEffect() {
+        const imgCards = document.querySelectorAll(".img-card");
+
+        imgCards.forEach(imgCard => {
+            const hoverImg = imgCard.getAttribute("data-hover-img");
+            const originalImg = imgCard.style.backgroundImage.match(/url\(["']?(.*?)["']?\)/)[1]; 
+
+            if (window.innerWidth < 720) {
+                imgCard.onmouseover = null;
+                imgCard.onmouseout = null;
+            } else {
+                imgCard.addEventListener("mouseover", function () {
+                    imgCard.style.backgroundImage = `url(${hoverImg})`;
+                });
+
+                imgCard.addEventListener("mouseout", function () {
+                    imgCard.style.backgroundImage = `url(${originalImg})`;
+                });
+            }
         });
-    
-        card.addEventListener('mouseout', function() {
-            card.style.backgroundImage = originalImage; 
-        });
-    });
+    }
+    updateHoverEffect();
+
+    window.addEventListener("resize", updateHoverEffect);
+
 
 
     //change arrow color btn on hover
