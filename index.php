@@ -18,6 +18,7 @@
         content="Sabine Thibout, France, front-end développeuse, back-end développeuse, full-stack développeuse, graphic designer, ui designer, portfolio, designer française, développeuse française, sabine thibout, sabinethibout, portfolio sabine thibout">
 
     <title>Sabine Thibout | Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="./favicon.ico" />
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/fonts.css">
     <link rel="shortcut icon" type="image/png" href="./img/logo.png" /> 
@@ -65,7 +66,7 @@
     </section>
     <section>
         <div class="video-container">
-            <video class="video" src="./video/video.mp4" autoplay muted loop> </video>
+            <video class="video" src="./video/video.mp4" autoplay muted loop  playsinline> </video>
             <div class="video-text">
                 créative dès mon plus jeune age, le dessin et la peinture sont ma passion.
                 j’aime quand les idées prennent forme puis prennent vie. Curieuse, toujours prête à explorer, à apprendre. Dynamique, parce que l’action et l’évolution sont essentielles. 

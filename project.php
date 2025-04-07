@@ -27,7 +27,6 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
 
 ?>
 
-<!-- La je peux faire mon code  -->
 <!DOCTYPE html>
 <html lang="fr" class="no-js">
 <head>
@@ -38,6 +37,7 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
     <meta name="keywords"
         content="Sabine Thibout, France, front-end développeuse, back-end développeuse, full-stack développeuse, graphic designer, ui designer, portfolio, designer française, développeuse française,sabine thibout, sabinethibout, portfolio sabine thibout">
     <title>Sabine Thibout | portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="./favicon.ico" />
     <link rel="stylesheet" href="style/fonts.css">
     <link rel="stylesheet" href="style/projects.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -55,9 +55,9 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
             <img src="./img/arrow.svg" alt="Retour en arrière" class="back">
         </a>
         <nav>
-              <a href="#whoAmI" class="nav-item change">About Me</a>
-              <a href="#myProjects" class="nav-item change2">My projects</a>
-              <a href="#contact" class="nav-item">Contact</a>
+              <a href="./index.php#whoAmI" class="nav-item change">About Me</a>
+              <a href="./index.php#myProjects" class="nav-item change2">My projects</a>
+              <a href="./index.php#contact" class="nav-item">Contact</a>
         </nav>
 
       </div>
