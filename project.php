@@ -115,7 +115,7 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
             while (file_exists($projectFolder . $imageIndex . '.jpg')) {
                 echo "
                 <div class='img-project-container'>
-                    <img class='img-project' src='{$projectFolder}{$imageIndex}.jpg' data-webgl-media/>
+                    <img class='img-project' src='{$projectFolder}{$imageIndex}.jpg' />
                 </div>";
                 $imageIndex++; 
             }
@@ -124,10 +124,10 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
         <div class="project-navigation">
         <a href="project.php?proj=<?php echo $prevProj; ?>" class="button btn-nav prev-project">
           <img src="./img/arrow.svg" alt="">
-          <p>Prev project</p>
+          <p>Précédent</p>
         </a>
         <a href="project.php?proj=<?php echo $nextProj; ?>" class="button btn-nav next-project">
-          <p>Next project</p>
+          <p>Suivant</p>
           <img src="./img/arrow.svg" alt="">
         </a>
      </div>
@@ -136,8 +136,8 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
 
 
      <footer>
-        <a href="index.php#whoAmI" class="navItems change">About Me</a>
-        <a href="index.php#myProjects" class="navItems change2">My projects</a>
+        <a href="index.php#whoAmI" class="navItems change">À propos</a>
+        <a href="index.php#myProjects" class="navItems change2">Mes projets</a>
         <a href="index.php#contact" class="navItems">Contact</a>
     </footer>
 
@@ -146,160 +146,6 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
      <script src="./script/animationProjet.js"></script>
      <script src="./script/projects.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
-    <script id="effectVertex" type="shader/vertex">
-        float PI = 3.141592653589793;
-
-        uniform vec2 uResolution; // in pixel
-        uniform float uTime; // in s
-        uniform vec2 uCursor; // 0 (left) 0 (top) / 1 (right) 1 (bottom)
-        uniform float uScrollVelocity; // - (scroll up) / + (scroll down)
-        uniform sampler2D uTexture; // texture
-        uniform vec2 uTextureSize; // size of texture
-        uniform vec2 uQuadSize; // size of texture element
-        uniform float uBorderRadius; // pixel value
-        uniform float uMouseEnter; // 0 - 1 (enter) / 1 - 0 (leave)
-        uniform vec2 uMouseOverPos; // 0 (left) 0 (top) / 1 (right) 1 (bottom)
-
-        // random
-        float random(vec2 st) {
-          return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
-        }
-
-        // contain
-        vec2 getContainUvFrag(vec2 uv, vec2 textureSize, vec2 quadSize) {
-          vec2 tempUv = uv - vec2(0.5);
-
-          float quadAspect = quadSize.x / quadSize.y;
-          float textureAspect = textureSize.x / textureSize.y;
-
-          if (quadAspect > textureAspect) {
-            tempUv *= vec2(quadAspect / textureAspect, 1.0);
-          } else {
-            tempUv *= vec2(1.0, textureAspect / quadAspect);
-          }
-
-          tempUv += vec2(0.5);
-
-          return tempUv;
-        }
-
-        // cover
-        vec2 getCoverUvVert(vec2 uv, vec2 textureSize, vec2 quadSize) {
-          vec2 ratio = vec2(
-            min((quadSize.x / quadSize.y) / (textureSize.x / textureSize.y), 1.0),
-            min((quadSize.y / quadSize.x) / (textureSize.y / textureSize.x), 1.0)
-          );
-
-          return vec2(
-            uv.x * ratio.x + (1.0 - ratio.x) * 0.5,
-            uv.y * ratio.y + (1.0 - ratio.y) * 0.5
-          );
-        }
-
-        vec2 getCoverUvFrag(vec2 uv, vec2 textureSize, vec2 quadSize) {
-          vec2 tempUv = uv - vec2(0.5);
-
-          float quadAspect = quadSize.x / quadSize.y;
-          float textureAspect = textureSize.x / textureSize.y;
-
-          if (quadAspect < textureAspect) {
-            tempUv *= vec2(quadAspect / textureAspect, 1.0);
-          } else {
-            tempUv *= vec2(1.0, textureAspect / quadAspect);
-          }
-
-          tempUv += vec2(0.5);
-
-          return tempUv;
-        }
-
-        // uv, rotation (in radians), mid (point to rotate around)
-        vec2 rotate(vec2 uv, float rotation, vec2 mid) {
-          return vec2(
-            cos(rotation) * (uv.x - mid.x) + sin(rotation) * (uv.y - mid.y) + mid.x,
-            cos(rotation) * (uv.y - mid.y) - sin(rotation) * (uv.x - mid.x) + mid.y
-          );
-        }
-
-
-        out vec2 vUv;  // 0 (left) 0 (bottom) - 1 (top) 1 (right)
-        out vec2 vUvCover;
-
-
-        vec3 deformationCurve(vec3 position, vec2 uv) {
-        position.y = position.y - (sin(uv.x * PI) * min(abs(uScrollVelocity), 5.0) * sign(uScrollVelocity) * -0.01);
-
-        return position;
-        }
-
-        void main() {
-        vUv = uv;
-        vUvCover = getCoverUvVert(uv, uTextureSize, uQuadSize);
-
-        vec3 deformedPosition = deformationCurve(position, vUvCover);
-
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(deformedPosition, 1.0);
-        }
-    </script>
-
-    <script id="effectFragment" type="shader/fragment">
-      precision highp float;
-
-      uniform vec2 uResolution; // in pixel
-      uniform float uTime; // in s
-      uniform vec2 uCursor; // 0 (left) 0 (top) / 1 (right) 1 (bottom)
-      uniform float uScrollVelocity; // - (scroll up) / + (scroll down)
-      uniform sampler2D uTexture; // texture
-      uniform vec2 uTextureSize; // size of texture
-      uniform vec2 uQuadSize; // size of texture element
-      uniform float uBorderRadius; // pixel value
-      uniform float uMouseEnter; // 0 - 1 (enter) / 1 - 0 (leave)
-      uniform vec2 uMouseOverPos; // 0 (left) 0 (top) / 1 (right) 1 (bottom)
-
-      in vec2 vUv; // 0 (left) 0 (bottom) - 1 (right) 1 (top)
-      in vec2 vUvCover;
-
-      out vec4 outColor;
-
-
-      void main() {
-        // texture
-        vec3 texture = vec3(texture(uTexture, vUvCover));
-
-        // output
-        outColor = vec4(texture, 1.0);
-      }
-    </script>
-
-<script src="./script/3D.js"></script>
 
     
 </body>

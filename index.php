@@ -54,13 +54,13 @@
         
     </header>
     <section class="description" id="whoAmI">
-        <h2 class="title-section">Who <span class="italic">am i ?</span></h2>
+        <h2 class="title-section">Qui <span class="italic">suis-je ?</span></h2>
         <p class="content">Actuellement en dernière année de BUT Métiers du Multimédia et de l’Internet, je suis passionnée par la création web. <br>
         Que ce soit la réalisation de wireframes ou le développement web, tout m’intéresse ! 
         Curieuse et motivée, j’apprends en continu pour proposer des solutions à la fois esthétiques et performantes. <br>
         Ayant acquis une solide expérience en webdesign et développement à travers mes projets universitaires, j’ai affiné ma créativité pour concevoir des interfaces esthétiques et intuitives. En parallèle, mon année d’apprentissage en tant que développeuse front-end m’a permis de renforcer mes compétences techniques pour donner vie à ces créations avec efficacité.</p>
         <a href="./doc/CV-SabineThibout.pdf" target="_blank" class=" button CV">
-            <p>Download my CV</p>
+            <p>Télécharger mon CV</p>
             <img src="./img/arrow.svg" alt="">
         </a>
     </section>
@@ -78,8 +78,8 @@
    
     <section class="projects" id="myProjects">
         <div class="title-padding">
-            <h2 class="title-section">Let's discover <span class="italic">my projects</span></h2>
-            <h3 class="subtitle">Lorem ipsum dolor</h3>
+            <h2 class="title-section">L'essentiel de <span class="italic">mes projets</span></h2>
+            <h3 class="subtitle">Explorez mon univers</h3>
         </div>
     
         <div class="card-container">
@@ -114,19 +114,19 @@
         Si tu es intéressé par mes compétences et mon profil, alors n’hésites pas à me contacter ! Je serais ravie de pouvoir échanger avec toi sur mes compétences professionnelles, et de collaborer sur un éventuel projet.
         </p>
         <div class="links">
-            <a href="" class="contact-link">
+            <a href="" class="contact-link" target="_blank">
                 <p class="text-link">LinkedIn</p>
                 <img src="./img/link.svg" class="text-link" alt="Lien vers mon LinkedIn">
             </a>
-            <a href="mailto:sabine@thibout.fr" class="contact-link">
+            <a href="mailto:sabine@thibout.fr" class="contact-link" target="_blank">
                 <p class="text-link">Mail</p>
                 <img src="./img/link.svg" class="text-link" alt="M'envoyer un mail">
             </a>
-            <a href="tel:+651827205" class="contact-link">
+            <a href="tel:+33651827205" class="contact-link" target="_blank">
                 <p class="text-link">Téléphone</p>
                 <img src="./img/link.svg" class="text-link" alt="Téléphonez-moi !">
             </a>
-            <a href="" class="contact-link">
+            <a href="" class="contact-link" target="_blank">
                 <p class="text-link">Github</p>
                 <img src="./img/link.svg" class="text-link" alt="Lien vers mon GitHub">
             </a>
@@ -134,8 +134,8 @@
         </div>
     </section>
     <footer>
-        <a href="#whoAmI" class="navItems change">About Me</a>
-        <a href="#myProjects" class="navItems change2">My projects</a>
+        <a href="#whoAmI" class="navItems change">À propos</a>
+        <a href="#myProjects" class="navItems change2">Mes projets</a>
         <a href="#contact" class="navItems">Contact</a>
     </footer>
     

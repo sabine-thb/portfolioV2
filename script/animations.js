@@ -1,15 +1,3 @@
-
-
-// gsap.from('.firstName, .lastName',{ 
-//     duration :1.5,
-//     opacity: 0,
-//     scrollTrigger:{
-//                 trigger : "header",
-//                 toggleActions : 'restart none none none'
-//      }
-  
-// })
-
 gsap.from('.firstName',{ 
     duration :1.5,
     opacity: 0,
@@ -31,6 +19,17 @@ gsap.from('.lastName',{
      }
   
 })
+
+gsap.from('.description',{ 
+    duration :1.5,
+    opacity: 0,
+    scrollTrigger:{
+                trigger : ".description",
+                toggleActions : 'restart none none none'
+     }
+  
+})
+
 
 
 

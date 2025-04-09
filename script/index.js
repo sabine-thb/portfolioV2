@@ -103,7 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
         cards.forEach((card) => {
             maxWidth += card.offsetWidth;
         });
-        maxWidth += 20 * (cards.length - 1);
+        // maxWidth += 20 * (cards.length - 1);
+        maxWidth += 20 * (cards.length); 
+        // maxWidth += 50 * (cards.length - 1);
+
         return maxWidth;
     }
     getMaxWidth();

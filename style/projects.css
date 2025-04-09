@@ -117,6 +117,9 @@ nav {
     height: 600px;
     background-position: center;
     background-size: cover;
+    position: sticky;
+    top: 0;
+    z-index: 0;
     /* object-fit: cover; */
     /* will-change: transform;
     position: relative; */
@@ -139,7 +142,7 @@ section {
     gap: 60px;
     font-family: "Public sans light", "sans-serif";
     font-size: 0.8rem;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 p {
@@ -176,7 +179,7 @@ p {
     border: 1px solid black;
     width: fit-content;
     font-family: "Public sans light", "sans-serif";
-    margin-top: 50px;
+    margin-top: 30px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -195,7 +198,7 @@ p {
     width: 100%;
     height: auto;
     object-fit: contain;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .text-description {
@@ -241,7 +244,7 @@ canvas {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    gap:30px;
+    gap:15px;
     margin-top:30px;
 }
 
@@ -254,7 +257,7 @@ canvas {
     border-radius: 50px;
     padding: 10px 40px;
     border: 1px solid black;
-    width: fit-content;
+    width: 180px;
     font-family: "Public sans light", "sans-serif";
     transition: all 0.3s ease-in-out;
 }
@@ -317,13 +320,17 @@ footer a:hover:before {
     .informations-container {
         flex-direction: row;
         justify-content: space-between;
+        margin-bottom: 60px;
     }
 
     .informations-text{
         margin-top:100px;
     }
 
-    
+    .img-project {
+        margin-bottom: 50px;
+    }
+
 }
 
 
@@ -380,6 +387,7 @@ footer a:hover:before {
 
     .project-navigation{
         flex-direction: row;
+        gap:30px;
     }
 
     .prev-project{
