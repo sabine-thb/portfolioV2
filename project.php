@@ -98,7 +98,7 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
                 <p class="text-title"> <?php foreach ($result as $row) echo $row["accroche"]?></p>
                 <p class="text-description"><?php foreach ($result as $row) echo $row["description"]?></p>
                 <?php if (!empty($row["lien"])): ?>
-                    <a href="<?php echo $row["lien"]; ?>" class="button link-project">
+                    <a href="<?php echo $row["lien"]; ?>" class="button link-project" target="_blank">
                         <p>Visit project</p>
                         <img src="./img/arrow.svg" alt="Visit the project">
                     </a>
