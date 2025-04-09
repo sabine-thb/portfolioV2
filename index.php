@@ -21,7 +21,6 @@
     <link rel="shortcut icon" type="image/png" href="./favicon.ico" />
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/fonts.css">
-    <link rel="shortcut icon" type="image/png" href="./img/logo.png" /> 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script defer type="text/javascript"
     src="https://res.cloudinary.com/veseylab/raw/upload/v1636192990/magicmouse/magic_mouse-1.2.1.cdn.min.js"></script>
