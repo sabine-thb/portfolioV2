@@ -8,15 +8,16 @@
     cursor:none;
 }
 
-/* html {
+html {
     scroll-behavior: smooth;
-} */
+}
 
 
 body {
     margin: 0;
     position: relative;
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 /* header */

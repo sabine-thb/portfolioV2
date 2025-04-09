@@ -33,6 +33,24 @@ gsap.from('.description',{
 
 
 
+// gsap.from('.scroll-to-discover', {
+//     duration: 1.5,
+//     opacity: 0,
+//     scrollTrigger: {
+//       trigger: ".card-container",
+//       start: "top top", 
+//       toggleActions: 'play none none reverse',
+//     },
+//   });
+
+
+
+
+
+
+
+
+
 
 
 

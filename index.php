@@ -132,6 +132,14 @@
 
         </div>
     </section>
+    <div class="scroll-to-discover">
+        <div class="scroll-text">Scroll pour découvrir</div>
+        <div class="scroll-icon-container">
+            <img src="./img/arrow.svg" class="scroll-icon" alt="">
+        </div>
+        
+
+    </div>
     <footer>
         <a href="#whoAmI" class="navItems change">À propos</a>
         <a href="#myProjects" class="navItems change2">Mes projets</a>

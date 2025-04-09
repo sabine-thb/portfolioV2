@@ -16,6 +16,7 @@ html {
 body{
     margin:0;
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 
@@ -374,6 +375,40 @@ footer a:hover:before{
     left: 0;
 }
 
+
+.scroll-to-discover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+
+.scroll-text{
+    max-width: 80px;
+    font-family: "Public sans light", "sans-serif";
+    font-size: 0.8rem;
+    color: black; /* Couleur de base du texte */
+    mix-blend-mode: difference;
+
+}
+
+.scroll-icon-container{
+    animation: scroll 1.5s ease-in-out infinite;
+    /* mix-blend-mode: difference; */
+}
+
+.scroll-icon {
+    width:30px;
+    transform: rotate(90deg);
+}
+
+
+
 @media(min-width:500px){
 
     .video-text{
@@ -565,6 +600,25 @@ footer a:hover:before{
       transform: rotate(360deg);
     }
   }
+
+  /* animation flèche scroll discover */
+
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+
 
 
 
