@@ -32,8 +32,8 @@
     <div class="cursor2"></div>
     <header>
         <nav>
-            <a href="#whoAmI" class="nav-item change">About Me</a>
-            <a href="#myProjects" class="nav-item change2">My projects</a>
+            <a href="#whoAmI" class="nav-item change">À propos</a>
+            <a href="#myProjects" class="nav-item change2">Mes projets</a>
             <a href="#contact" class="nav-item">Contact</a>
         </nav>
         <div class="img-container">

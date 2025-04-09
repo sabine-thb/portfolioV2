@@ -55,8 +55,8 @@ $result=$stmt-> fetchall(PDO::FETCH_ASSOC);
             <img src="./img/arrow.svg" alt="Retour en arrière" class="back">
         </a>
         <nav>
-              <a href="./index.php#whoAmI" class="nav-item change">About Me</a>
-              <a href="./index.php#myProjects" class="nav-item change2">My projects</a>
+              <a href="./index.php#whoAmI" class="nav-item change">À propos</a>
+              <a href="./index.php#myProjects" class="nav-item change2">Mes projets</a>
               <a href="./index.php#contact" class="nav-item">Contact</a>
         </nav>
 
