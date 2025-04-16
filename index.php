@@ -67,7 +67,7 @@
         <div class="video-container">
             <video class="video" src="./video/video.mp4" autoplay muted loop  playsinline> </video>
             <div class="video-text">
-                créative dès mon plus jeune age, le dessin et la peinture sont ma passion.
+                créative dès mon plus jeune âge, le dessin et la peinture sont ma passion.
                 j’aime quand les idées prennent forme puis prennent vie. Curieuse, toujours prête à explorer, à apprendre. Dynamique, parce que l’action et l’évolution sont essentielles. 
                 audacieuse, avec cette envie constante de donner du caractère aux projets. Passionnée par la recherche de l’originalité.
                 Pas juste faire. Faire bien. Faire différent. 
@@ -110,7 +110,7 @@
     <section id="contact">
         <h2 class="title-section">Contact</h2>
         <p class="content">
-        Si tu es intéressé par mes compétences et mon profil, alors n’hésites pas à me contacter ! Je serais ravie de pouvoir échanger avec toi sur mes compétences professionnelles, et de collaborer sur un éventuel projet.
+        Si tu es intéressé par mes compétences et mon profil, alors n’hésite pas à me contacter ! Je serais ravie de pouvoir échanger avec toi sur mes compétences professionnelles, et de collaborer sur un éventuel projet.
         </p>
         <div class="links">
             <a href="" class="contact-link" target="_blank">

@@ -128,23 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 
-
-
-    //  gsap.to('.scroll-to-discover', {
-    //     opacity: 1,
-    //     duration: 0.2,
-    //     scrollTrigger: {
-    //         trigger: ".card-container",
-    //         start: "top top",
-    //         end: () => `+=${getMaxWidth()}`,
-    //         scrub: true,
-    //         toggleActions: 'play none none reverse',
-    //         onUpdate: (self) => {
-    //             gsap.to('.scroll-to-discover', { opacity: self.progress > 0 && self.progress < 1 ? 1 : 0, duration: 0.2 });
-    //         }
-    //     }
-    // });
-
+    
     gsap.to('.scroll-to-discover', {
         opacity: 1,
         duration: 0.2,
@@ -155,7 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
             onLeaveBack: () => gsap.to('.scroll-to-discover', { opacity: 0, duration: 0.2 }),
             end: () => `+=${getMaxWidth() * 0.8}`, // Disparaît à 80% du scroll horizontal
             onLeave: () => gsap.to('.scroll-to-discover', { opacity: 0, duration: 0.2 }),
-            // markers: true // Pour le débogage
         }
     });
 
