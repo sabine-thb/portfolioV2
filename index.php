@@ -113,7 +113,7 @@
         Si tu es intéressé par mes compétences et mon profil, alors n’hésite pas à me contacter ! Je serais ravie de pouvoir échanger avec toi sur mes compétences professionnelles, et de collaborer sur un éventuel projet.
         </p>
         <div class="links">
-            <a href="" class="contact-link" target="_blank">
+            <a href="www.linkedin.com/in/sabine-thibout" class="contact-link" target="_blank">
                 <p class="text-link">LinkedIn</p>
                 <img src="./img/link.svg" class="text-link" alt="Lien vers mon LinkedIn">
             </a>
@@ -125,7 +125,7 @@
                 <p class="text-link">Téléphone</p>
                 <img src="./img/link.svg" class="text-link" alt="Téléphonez-moi !">
             </a>
-            <a href="" class="contact-link" target="_blank">
+            <a href="https://github.com/sabine-thb" class="contact-link" target="_blank">
                 <p class="text-link">Github</p>
                 <img src="./img/link.svg" class="text-link" alt="Lien vers mon GitHub">
             </a>
